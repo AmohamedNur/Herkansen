@@ -2,13 +2,16 @@
 
 namespace App\Controller;
 use App\Entity\Genre;
+use App\Form\InsertType;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GenreController extends  AbstractController{
-    #[Route('/home')]
+    #[Route('/home', name: 'home')]
     public function home(ManagerRegistry $doctrine): Response
     {
         $genre=$doctrine->getRepository(Genre::class)->findAll();
@@ -16,7 +19,7 @@ class GenreController extends  AbstractController{
             ['genre'=>$genre]);
     }
 
-    #[Route('/{id}', name: 'movie')]
+    #[Route('/movie/{id}', name: 'movie')]
 
     public function genre(ManagerRegistry $doctrine, int $id): Response
     {

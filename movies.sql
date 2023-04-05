@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 05 apr 2023 om 12:58
+-- Gegenereerd op: 05 apr 2023 om 14:46
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -62,7 +62,9 @@ CREATE TABLE `genre` (
 INSERT INTO `genre` (`id`, `name`) VALUES
 (1, 'Komedia'),
 (2, 'sciencefiction'),
-(3, 'superhero fiction');
+(3, 'superhero fiction'),
+(7, 'Actie'),
+(9, 'Drama');
 
 -- --------------------------------------------------------
 
@@ -177,7 +179,7 @@ ALTER TABLE `top_actor`
 -- AUTO_INCREMENT voor een tabel `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`

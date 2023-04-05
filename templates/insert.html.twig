@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 py-4">
+                <h1>Genre toevoegen</h1>
+                {{ form_start(insert,{'attr':{'novalidate':'novalidate'}}) }}
+                {{ form_widget(insert) }}
+                {{ form_end(insert) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

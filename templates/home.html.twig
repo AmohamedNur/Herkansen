@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 {%block body %}
 <h1 class="text-center">Genres</h1>
+    {% for msg in app.session.flashBag.get('success') %}
+    <div class="alert alert-success">
+        {{ msg }}
+    </div>
+    {% endfor %}
     <div class="container-xl  ">
     <div class="row">
         {% for g in genre %}
@@ -16,7 +21,7 @@
 
 
         {% endfor %}
-        <a class="btn btn-primary" href="home"><b>back</b></a>
+        <a class="btn btn-primary" href="insert"><b>New Genre</b></a>
     </div>
 
 
