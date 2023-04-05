@@ -2,33 +2,47 @@
 {%block body %}
     <div class="container-xl  ">
     <div class="row">
+        <div class="card-header">
+            <h1>{{ genre.name }}</h1>
+        </div>
+        {% for movie in genre.movies %}
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ movie.title }}</li>
+                <li class="list-group-item">{{ movie.description }}</li>
+                <li class="list-group-item">{{ movie.year }}</li>
+                <li class="list-group-item">{{ movie.budget }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+{#            <table>#}
+{#                <thead>#}
+{#                <tr>#}
+{#                    <th scope="col">Title</th>#}
+{#                    <th scope="col">Description</th>#}
+{#                    <th scope="col">Year</th>#}
+{#                    <th scope="col">Budget</th>#}
+{#                </tr>#}
+{#                </thead>#}
 
-            <table>
-                <thead>
-                <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">Budget</th>
-                </tr>
-                </thead>
+{#                <tbody>#}
+{#                {% for movie in genre.movies %}#}
+{#                <tr>#}
+{#                    <td>{{ movie.title }}</td>#}
+{#                    <td>{{ movie.description }}</td>#}
+{#                    <td>{{ movie.year }}</td>#}
+{#                    <td>{{ movie.budget }}</td>#}
+{#                </tr>#}
+{#                {% endfor %}#}
 
-                <tbody>
-                {% for movie in genre.movies %}
-                <tr>
-                    <td>{{ movie.title }}</td>
-                    <td>{{ movie.description }}</td>
-                    <td>{{ movie.year }}</td>
-                    <td>{{ movie.budget }}</td>
-                </tr>
-                {% endfor %}
-
-                </tbody>
-            </table>
+{#                </tbody>#}
+{#            </table>#}
 
 
+<div class="col">
+    <a class="btn btn-outline-dark mt-5" href="{{ path('home') }}"><b>back</b></a>
+</div>
 
-        <a class="btn btn-outline-dark" href="home"><b>back</b></a>
     </div>
 
 
